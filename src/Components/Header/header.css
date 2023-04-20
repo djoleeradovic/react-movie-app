@@ -1,0 +1,29 @@
+header {
+  background: var(--color-black);
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--color-white);
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+h2 span {
+  color: var(--color-primary);
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    width: 50%;
+  }
+}
