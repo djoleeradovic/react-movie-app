@@ -22,7 +22,7 @@ const MovieInfo = () => {
 
   const navigate = useNavigate();
   const returnToHome = () => {
-    navigate("/");
+    navigate("/react-movie-app");
   };
 
   if (!movie) return <p>Loading</p>;
