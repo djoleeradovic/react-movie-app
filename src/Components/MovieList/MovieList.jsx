@@ -2,10 +2,10 @@ import { React, useContext } from "react";
 import "./movielist.css";
 import { movieContext } from "../../App";
 import { AiFillHeart } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const MovieList = () => {
-  const { movies, addFavorite } = useContext(movieContext);
+  const { movies, addFavorite, setRecents, recents } = useContext(movieContext);
 
   return (
     <section className="movie-list">
@@ -14,7 +14,11 @@ const MovieList = () => {
         {movies.map((movie, index) => (
           <article className="movie" key={index}>
             <Link to={`/movie/${movie.imdbID}`}>
-              <img src={movie.Poster} alt="movie-poster" />
+              <img
+                src={movie.Poster}
+                onClick={() => setRecents([movie, ...recents].slice(-5))}
+                alt="movie-poster"
+              />
             </Link>
 
             <div className="overlay">
@@ -29,6 +33,7 @@ const MovieList = () => {
           </article>
         ))}
       </div>
+      <Outlet />
     </section>
   );
 };
