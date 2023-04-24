@@ -3,7 +3,7 @@ import "./header.css";
 import { movieContext } from "../../App";
 import { NavLink } from "react-router-dom";
 import { HiBars3 } from "react-icons/hi2";
-import { GrFormClose } from "react-icons/gr";
+import { MdClose } from "react-icons/md";
 
 const Header = () => {
   const { setSearchValue } = useContext(movieContext);
@@ -14,8 +14,12 @@ const Header = () => {
         Movi<span>lex</span>
       </h2>
       <ul className={`nav-links ${toggleNav ? "nav-links-mobile" : ""}`}>
-        <NavLink to="/react-movie-app">Home</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/react-movie-app" onClick={() => setToggleNav(false)}>
+          Home
+        </NavLink>
+        <NavLink to="/favorites" onClick={() => setToggleNav(false)}>
+          Favorites
+        </NavLink>
       </ul>
       <input
         type="text"
@@ -24,7 +28,7 @@ const Header = () => {
       />
       <div className="nav-btn">
         {toggleNav ? (
-          <GrFormClose onClick={() => setToggleNav(false)} />
+          <MdClose onClick={() => setToggleNav(false)} />
         ) : (
           <HiBars3 onClick={() => setToggleNav(true)} />
         )}
