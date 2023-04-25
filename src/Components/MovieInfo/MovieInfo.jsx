@@ -29,7 +29,7 @@ const MovieInfo = () => {
   else {
     return (
       <section className="movie-info">
-        <div className="movie-image">
+        <div className="movie-img">
           <img src={movie.Poster} alt="movie-img" />
         </div>
         <div className="movie-text-info">
