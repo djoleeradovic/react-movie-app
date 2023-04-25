@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const MovieInfo = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
 
   const getMovieInfo = async () => {
     const url = `https://www.omdbapi.com/?i=${id}&apikey=30dc94ac`;
@@ -20,9 +21,8 @@ const MovieInfo = () => {
     getMovieInfo();
   }, [id]);
 
-  const navigate = useNavigate();
   const returnToHome = () => {
-    navigate("/react-movie-app");
+    navigate(-1);
   };
 
   if (!movie) return <p>Loading</p>;
