@@ -25,3 +25,7 @@
   color: white;
   text-transform: initial;
 }
+
+.movie-text-info h2 span {
+  color: var(--color-primary);
+}

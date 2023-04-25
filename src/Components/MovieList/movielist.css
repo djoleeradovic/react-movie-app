@@ -28,12 +28,16 @@
 }
 
 .movie-list h2 {
-  color: var(--color-white);
-  text-align: center;
-  background: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 11rem;
+  height: 3rem;
+  color: var(--color-white);
+  background: var(--color-primary);
   border-radius: 1rem;
   margin-bottom: 1rem;
+  cursor: default;
 }
 
 .movie-list img {
@@ -45,6 +49,11 @@
   height: fit-content;
 }
 
+.movie-img {
+  width: 20rem;
+  height: 30rem;
+}
+
 .overlay {
   display: none;
   position: absolute;
@@ -52,9 +61,8 @@
   height: 30%;
   width: 100%;
   justify-content: center;
-  align-items: center;
   align-items: flex-end;
-  bottom: 0.45rem;
+  bottom: 0;
   left: 0;
   padding-bottom: 1rem;
 }

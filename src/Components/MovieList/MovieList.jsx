@@ -23,13 +23,15 @@ const MovieList = () => {
       <div>
         {movies.map((movie, index) => (
           <article className="movie" key={index}>
-            <Link to={`/movie/${movie.imdbID}`}>
-              <img
-                src={movie.Poster}
-                onClick={() => addRecents(movie)}
-                alt="movie-poster"
-              />
-            </Link>
+            <div className="movie-img">
+              <Link to={`/movie/${movie.imdbID}`}>
+                <img
+                  src={movie.Poster}
+                  onClick={() => addRecents(movie)}
+                  alt="movie-poster"
+                />
+              </Link>
+            </div>
 
             <div className="overlay">
               <button

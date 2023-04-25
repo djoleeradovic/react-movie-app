@@ -1,7 +1,7 @@
 import { React, useContext, useState } from "react";
 import "./header.css";
 import { movieContext } from "../../App";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { HiBars3 } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 
@@ -11,8 +11,11 @@ const Header = () => {
   return (
     <header>
       <h2>
-        Movi<span>lex</span>
+        <Link to="/react-movie-app">
+          Movi<span>lex</span>
+        </Link>
       </h2>
+
       <ul className={`nav-links ${toggleNav ? "nav-links-mobile" : ""}`}>
         <NavLink to="/react-movie-app" onClick={() => setToggleNav(false)}>
           Home
