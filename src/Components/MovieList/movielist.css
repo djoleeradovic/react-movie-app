@@ -29,15 +29,20 @@
 
 .movie-list h2 {
   color: var(--color-white);
+  text-align: center;
+  background: var(--color-primary);
+  width: 11rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .movie-list img {
-  height: 100%;
+  min-width: 300px;
 }
 
 .movie {
   position: relative;
-  height: 30rem;
+  height: fit-content;
 }
 
 .overlay {
@@ -49,7 +54,7 @@
   justify-content: center;
   align-items: center;
   align-items: flex-end;
-  bottom: 0rem;
+  bottom: 0.45rem;
   left: 0;
   padding-bottom: 1rem;
 }

@@ -1,0 +1,20 @@
+.favorite-list {
+  margin-top: 2rem;
+}
+
+.favorite-list h2 {
+  color: var(--color-white);
+  text-align: center;
+  background: var(--color-primary);
+  width: 11rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.favorite-list > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

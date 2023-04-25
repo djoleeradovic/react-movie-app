@@ -2,7 +2,7 @@ import { React, useState, useEffect, createContext } from "react";
 import { Header, Favorites, MovieInfo } from "./Components";
 import HomePage from "./HomePage/HomePage";
 import { useLocation } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 export const movieContext = createContext();
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
     JSON.parse(localStorage.getItem("favorites")) || []
   );
   const [recents, setRecents] = useState([]);
+  const navigate = useNavigate();
 
   const getMovies = async (searchValue) => {
     const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=30dc94ac`;
@@ -21,6 +22,10 @@ const App = () => {
     if (resJSON.Search) {
       setMovies(resJSON.Search);
     }
+
+    navigate("/react-movie-app", {
+      replace: true,
+    });
   };
 
   useEffect(() => {

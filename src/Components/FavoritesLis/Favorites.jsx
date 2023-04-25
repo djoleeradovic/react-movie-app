@@ -1,5 +1,5 @@
 import { React, useContext } from "react";
-import "../MovieList/movielist.css";
+import "./favorites.css";
 import { movieContext } from "../../App";
 import { AiFillHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ const Favorites = () => {
   const { favorites, removeFavorite } = useContext(movieContext);
 
   return (
-    <section className="movie-list">
+    <section className="favorite-list">
       <h2>FAVORITES</h2>
       <div>
         {favorites.map((movie, index) => (
