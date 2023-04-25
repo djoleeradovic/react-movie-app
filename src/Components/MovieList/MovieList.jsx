@@ -5,7 +5,17 @@ import { AiFillHeart } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
 
 const MovieList = () => {
-  const { movies, addFavorite, setRecents, recents } = useContext(movieContext);
+  const { movies, addFavorite, setRecents } = useContext(movieContext);
+
+  const addRecents = (movie) => {
+    setRecents((recents) => {
+      if (recents.length > 4) {
+        return [movie, ...recents.slice(0, -1)];
+      } else {
+        return [movie, ...recents];
+      }
+    });
+  };
 
   return (
     <section className="movie-list">
@@ -16,7 +26,7 @@ const MovieList = () => {
             <Link to={`/movie/${movie.imdbID}`}>
               <img
                 src={movie.Poster}
-                onClick={() => setRecents([movie, ...recents].slice(-5))}
+                onClick={() => addRecents(movie)}
                 alt="movie-poster"
               />
             </Link>
